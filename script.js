@@ -1,4 +1,3 @@
-
 const word = document.getElementById("word");
 const text = document.getElementById("text");
 const scoreDoc = document.getElementById("score");
@@ -29,6 +28,20 @@ const words = [
   "admit",
   "drag",
   "loving",
+  "application",
+  "programming",
+  "interface",
+  "library",
+  "computer",
+  "important",
+  "secondary",
+  "television",
+  "congratulation",
+  "document",
+  "student",
+  "teacher",
+  "success",
+  "intelligent",
 ];
 let randomWord = "";
 let score = 0;
@@ -40,7 +53,7 @@ let level =
 level.value =
   localStorage.getItem("level") !== null
     ? localStorage.getItem("level")
-    : "medium";
+    : levelsDoc.value;
 text.focus();
 const timeInterval = setInterval(updateTime, 1000);
 function getRandomWord() {
@@ -57,8 +70,7 @@ function updateScore() {
 function updateTime() {
   time--;
   timeDoc.innerHTML = time + "s";
-
-  if (time  === 0) {
+  if (time === 0) {
     clearInterval(timeInterval);
     gameOver();
   }
